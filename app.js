@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const fallbackSubmit = () => {
         console.warn('AJAX submit failed. Falling back to standard form submission.');
-        contactForm.setAttribute('action', 'https://formsubmit.co/inbox.vairamuthu@gmail.com');
+        contactForm.setAttribute('action', 'https://api.web3forms.com/submit');
         contactForm.setAttribute('method', 'POST');
         contactForm.submit();
       };
@@ -133,18 +133,20 @@ document.addEventListener('DOMContentLoaded', () => {
       formSubmitBtn.disabled = true;
       formSubmitBtn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin mr-2"></i>Sending...';
 
-      // Send actual POST request to FormSubmit
-      fetch('https://formsubmit.co/ajax/inbox.vairamuthu@gmail.com', {
+      // Send actual POST request to Web3Forms
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
+          access_key: '680b8957-1088-400f-bce8-575a4e5eedc9',
           name: name,
           email: email,
           subject: subject,
-          message: message
+          message: message,
+          from_name: 'Vairamuthu Portfolio Contact Form'
         })
       })
       .then(response => response.json())
@@ -172,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 5000);
           }
         } else {
-          // If response says error (e.g. email not activated yet), do a standard form submission
+          // If response says error (e.g. key not working), do standard form submission
           fallbackSubmit();
         }
       })
