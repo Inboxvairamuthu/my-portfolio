@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Vairamuthu B. | Full Stack Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Vairamuthu B., Full Stack Developer specialized in building scalable backend architectures and dynamic frontend solutions. Node.js, NestJS, React, PostgreSQL.">
+  <meta name="keywords" content="Vairamuthu B, Full Stack Developer, Backend Developer, NestJS, Node.js, React, Portfolio, Software Engineer">
+  <meta name="author" content="Vairamuthu B.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Vairamuthu B. | Full Stack Engineer">
+  <meta property="og:description" content="Full Stack Developer specialized in building scalable backend architectures and dynamic frontend solutions.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#020c1b',
+              900: '#0a192f',
+              800: '#112240',
+              700: '#233554',
+              600: '#334c7a',
+              400: '#8892b0',
+              300: '#a8b2d1',
+              100: '#ccd6f6',
+            },
+            tealAccent: {
+              DEFAULT: '#64ffda',
+              glow: 'rgba(100, 255, 218, 0.1)',
+              hover: 'rgba(100, 255, 218, 0.2)',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="relative min-h-screen text-navy-300 selection:bg-tealAccent/20 selection:text-tealAccent">
+
+  <!-- Background Decorative Glowing Elements -->
+  <div class="fixed top-[-10%] left-[-10%] glow-bg"></div>
+  <div class="fixed bottom-[-10%] right-[-10%] glow-bg" style="background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(0, 0, 0, 0) 70%);"></div>
+
+  <!-- Header Section -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-navy-900/80 backdrop-blur-md border-b border-navy-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="text-tealAccent font-mono-custom text-xl font-bold tracking-wider hover:opacity-80 transition-opacity">
+        &lt;Vairamuthu B. /&gt;
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-mono-custom">
+        <a href="#about" class="nav-link text-slate-300 hover:text-tealAccent transition-colors duration-300 py-2"><span class="text-tealAccent">01.</span> About</a>
+        <a href="#skills" class="nav-link text-slate-300 hover:text-tealAccent transition-colors duration-300 py-2"><span class="text-tealAccent">02.</span> Skills</a>
+        <a href="#experience" class="nav-link text-slate-300 hover:text-tealAccent transition-colors duration-300 py-2"><span class="text-tealAccent">03.</span> Experience</a>
+        <a href="#education" class="nav-link text-slate-300 hover:text-tealAccent transition-colors duration-300 py-2"><span class="text-tealAccent">04.</span> Education</a>
+        <a href="#contact" class="nav-link text-slate-300 hover:text-tealAccent transition-colors duration-300 py-2"><span class="text-tealAccent">05.</span> Contact</a>
+        <a href="docs/Vairamuthu_B_Resume.pdf" download="Vairamuthu_B_Resume.pdf" class="px-4 py-2 border border-tealAccent text-tealAccent rounded hover:bg-tealAccent/10 transition-colors duration-300">Resume</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-tealAccent text-2xl focus:outline-none" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-20 left-0 w-full h-[calc(100vh-80px)] bg-navy-900/95 backdrop-blur-lg flex-col items-center justify-center space-y-8 font-mono-custom text-lg border-t border-navy-800">
+      <a href="#about" class="text-navy-100 hover:text-tealAccent transition-colors"><span class="text-tealAccent block text-center text-xs mb-1">01.</span> About</a>
+      <a href="#skills" class="text-navy-100 hover:text-tealAccent transition-colors"><span class="text-tealAccent block text-center text-xs mb-1">02.</span> Skills</a>
+      <a href="#experience" class="text-navy-100 hover:text-tealAccent transition-colors"><span class="text-tealAccent block text-center text-xs mb-1">03.</span> Experience</a>
+      <a href="#education" class="text-navy-100 hover:text-tealAccent transition-colors"><span class="text-tealAccent block text-center text-xs mb-1">04.</span> Education</a>
+      <a href="#contact" class="text-navy-100 hover:text-tealAccent transition-colors"><span class="text-tealAccent block text-center text-xs mb-1">05.</span> Contact</a>
+      <a href="docs/Vairamuthu_B_Resume.pdf" download="Vairamuthu_B_Resume.pdf" class="px-6 py-2 border border-tealAccent text-tealAccent rounded hover:bg-tealAccent/10 transition-colors">Resume</a>
+    </div>
+  </header>
+
+  <!-- Main Body Content -->
+  <main class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center pt-24 pb-12 relative z-10">
+      <div class="reveal">
+        <p class="font-mono-custom text-tealAccent text-sm md:text-base mb-5">Hi, my name is</p>
+      </div>
+      <div class="reveal delay-100">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-navy-100 tracking-tight mb-3">
+          Vairamuthu B.
+        </h1>
+      </div>
+      <div class="reveal delay-200">
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-navy-400 tracking-tight leading-none mb-6">
+          Full Stack Developer specialized in building scalable backend architectures and dynamic frontend solutions.
+        </h2>
+      </div>
+      <div class="reveal delay-300 max-w-2xl">
+        <p class="text-base md:text-lg mb-10 leading-relaxed text-navy-400">
+          I design and develop high-performance web applications, leveraging modern frontend interfaces and robust backend architectures. Focused on clean code, scalability, and collaborative problem-solving from concept to deployment.
+        </p>
+      </div>
+
+      <!-- Quick Contact Badges & Buttons -->
+      <div class="reveal delay-400 flex flex-wrap gap-4 items-center mb-12">
+        <a href="mailto:inbox.vairamuthu@gmail.com" class="px-6 py-3.5 border border-tealAccent text-tealAccent hover:bg-tealAccent/10 rounded font-mono-custom text-sm font-semibold tracking-wide transition-all duration-300">
+          <i class="fa-regular fa-envelope mr-2"></i>Email Me
+        </a>
+      </div>
+
+      <!-- Socials / Quick Copy Links -->
+      <div class="reveal delay-500 flex flex-wrap gap-4 items-center">
+        <!-- Social Icons -->
+        <a href="https://github.com/Inboxvairamuthu" target="_blank" rel="noopener noreferrer" class="text-2xl text-navy-400 hover:text-tealAccent transition-colors p-2" aria-label="GitHub Profile">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/vairamuthu-b-535b60420/" target="_blank" rel="noopener noreferrer" class="text-2xl text-navy-400 hover:text-tealAccent transition-colors p-2" aria-label="LinkedIn Profile">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        
+        <span class="h-6 w-px bg-navy-800 mx-2 hidden sm:inline"></span>
+        
+        <!-- Copy Badges -->
+        <button data-copy="inbox.vairamuthu@gmail.com" class="px-3 py-1.5 rounded-full text-xs font-mono-custom border border-navy-800 bg-navy-800/30 text-navy-400 hover:border-tealAccent hover:text-tealAccent transition-all duration-200" title="Click to copy email">
+          <i class="fa-regular fa-copy mr-1.5"></i>inbox.vairamuthu@gmail.com
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative z-10 border-t border-navy-800">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        <div class="md:col-span-2 reveal-left">
+          <div class="flex items-center space-x-4 mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-100 flex items-center">
+              <span class="text-tealAccent font-mono-custom text-xl mr-2">01.</span> About Me
+            </h2>
+            <div class="h-px bg-navy-800 flex-grow"></div>
+          </div>
+          <p class="mb-4 text-navy-400 leading-relaxed">
+            I am a Full Stack Developer with a strong track record of crafting efficient and robust server environments, coupled with highly interactive user interfaces. With a focus on scalability and modern system design, I love solving hard technical challenges and translating complex business requirements into elegant code.
+          </p>
+          <p class="mb-4 text-navy-400 leading-relaxed">
+            My experience spans across full-lifecycle product engineering at <strong class="text-tealAccent">XceptionalLEARNING</strong>, coordinating logistics and digital systems within a family construction setting, and building core institutional management software in corporate development environments.
+          </p>
+          <p class="text-navy-400 leading-relaxed">
+            Here are a few core principles I follow:
+          </p>
+          <ul class="grid grid-cols-2 gap-2 mt-4 font-mono-custom text-xs text-navy-400">
+            <li><i class="fa-solid fa-caret-right text-tealAccent mr-2"></i>Performance First</li>
+            <li><i class="fa-solid fa-caret-right text-tealAccent mr-2"></i>Atomic Code Structure</li>
+            <li><i class="fa-solid fa-caret-right text-tealAccent mr-2"></i>Collaborative Iteration</li>
+            <li><i class="fa-solid fa-caret-right text-tealAccent mr-2"></i>Scale-Ready Design</li>
+          </ul>
+        </div>
+        
+        <!-- Profile Aesthetic / Graphic -->
+        <div class="reveal-right flex justify-center">
+          <div class="relative group">
+            <div class="absolute -inset-1 rounded bg-gradient-to-r from-tealAccent to-indigo-500 opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 blur"></div>
+            <div class="relative w-64 h-64 rounded bg-navy-800 border border-navy-700 flex items-center justify-center p-6 text-center">
+              <div>
+                <i class="fa-solid fa-laptop-code text-5xl text-tealAccent mb-4 floating-element inline-block"></i>
+                <h3 class="font-bold text-navy-100 text-lg">Full Stack Developer</h3>
+                <p class="text-xs text-navy-400 font-mono-custom mt-2">Vairamuthu B.</p>
+                <div class="mt-4 flex justify-center space-x-3 text-sm text-navy-400">
+                  <span>Node.js</span> • <span>React</span> • <span>NestJS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative z-10 border-t border-navy-800">
+      <div class="reveal">
+        <div class="flex items-center space-x-4 mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-navy-100 flex items-center">
+            <span class="text-tealAccent font-mono-custom text-xl mr-2">02.</span> Core Technologies
+          </h2>
+          <div class="h-px bg-navy-800 flex-grow"></div>
+        </div>
+      </div>
+
+      <!-- Skills Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Backend Card -->
+        <div class="glass-card rounded-lg p-8 reveal delay-100">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-12 h-12 rounded bg-tealAccent/10 flex items-center justify-center text-tealAccent text-xl">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-navy-100">Backend Architectures</h3>
+              <p class="text-xs text-navy-400 font-mono-custom">Server-side systems</p>
+            </div>
+          </div>
+          <p class="text-sm text-navy-400 mb-6 leading-relaxed">
+            Designing microservices, REST APIs, and scalable modular code bases using clean design patterns.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">Node.js</span>
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">NestJS</span>
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Frontend Card -->
+        <div class="glass-card rounded-lg p-8 reveal delay-200">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-12 h-12 rounded bg-tealAccent/10 flex items-center justify-center text-tealAccent text-xl">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-navy-100">Frontend Interfaces</h3>
+              <p class="text-xs text-navy-400 font-mono-custom">Dynamic experiences</p>
+            </div>
+          </div>
+          <p class="text-sm text-navy-400 mb-6 leading-relaxed">
+            Crafting engaging responsive frontend applications with modern layout frameworks and visual states.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">React</span>
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">Tailwind CSS</span>
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">Vanilla JS</span>
+          </div>
+        </div>
+
+        <!-- Databases & Analytics Card -->
+        <div class="glass-card rounded-lg p-8 reveal delay-300">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-12 h-12 rounded bg-tealAccent/10 flex items-center justify-center text-tealAccent text-xl">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-navy-100">Data & Analytics</h3>
+              <p class="text-xs text-navy-400 font-mono-custom">Storage & insight</p>
+            </div>
+          </div>
+          <p class="text-sm text-navy-400 mb-6 leading-relaxed">
+            Constructing optimized relational/non-relational schemas, managing logic databases, and rendering analytics.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">PostgreSQL</span>
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">MongoDB</span>
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">SQL</span>
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">Excel</span>
+            <span class="tech-badge px-3 py-1 rounded font-mono-custom text-xs">Power BI</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 relative z-10 border-t border-navy-800">
+      <div class="reveal">
+        <div class="flex items-center space-x-4 mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold text-navy-100 flex items-center">
+            <span class="text-tealAccent font-mono-custom text-xl mr-2">03.</span> Professional History
+          </h2>
+          <div class="h-px bg-navy-800 flex-grow"></div>
+        </div>
+      </div>
+
+      <!-- Experience Vertical Timeline -->
+      <div class="relative max-w-3xl mx-auto border-l border-navy-800 pl-6 md:pl-8">
+        
+        <!-- Job 1 -->
+        <div class="timeline-item mb-12 relative reveal">
+          <!-- Timeline Dot -->
+          <div class="timeline-dot"></div>
+          
+          <div class="glass-card rounded-lg p-6 md:p-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 class="text-lg md:text-xl font-bold text-navy-100">
+                  Full Stack Developer 
+                  <span class="text-tealAccent font-normal">@ XceptionalLEARNING</span>
+                </h3>
+                <p class="font-mono-custom text-xs text-tealAccent mt-1">Sep 2025 – Present</p>
+              </div>
+              <span class="inline-block px-3 py-1 rounded-full text-xs font-mono-custom border border-tealAccent/20 bg-tealAccent/5 text-tealAccent mt-2 md:mt-0 self-start md:self-auto">
+                Current Role
+              </span>
+            </div>
+            <ul class="space-y-3 text-sm text-navy-400 list-none pl-0">
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Direct focus on core web app scaling to match expanding client databases and support seamless usage.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Collaborate closely with the CTO & CEO offices on technical system designs, features, and platform scalability parameters.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Own the full-lifecycle development process of system modules, including backend API extensions and dynamic frontend components.</span>
+              </li>
+            </ul>
+            <div class="mt-6 flex flex-wrap gap-2 pt-4 border-t border-navy-800">
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">Node.js</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">NestJS</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">React</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item mb-12 relative reveal">
+          <div class="timeline-dot"></div>
+          
+          <div class="glass-card rounded-lg p-6 md:p-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 class="text-lg md:text-xl font-bold text-navy-100">
+                  Operations & Systems Manager
+                  <span class="text-tealAccent font-normal">@ Family Construction Business</span>
+                </h3>
+                <p class="font-mono-custom text-xs text-tealAccent mt-1">Nov 2022 – Aug 2025</p>
+              </div>
+            </div>
+            <ul class="space-y-3 text-sm text-navy-400 list-none pl-0">
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Managed end-to-end digital record-keeping systems, modernizing documentation workflows during a sensitive family emergency transition.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Orchestrated project logistics, scheduling operations, and client communication interfaces to ensure zero disruption in delivery timelines.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Utilized data tools to audit resource consumption, generating clarity on operational budgets and material logistics.</span>
+              </li>
+            </ul>
+            <div class="mt-6 flex flex-wrap gap-2 pt-4 border-t border-navy-800">
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">Excel</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">Power BI</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">SQL Data Audits</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item mb-12 relative reveal">
+          <div class="timeline-dot"></div>
+          
+          <div class="glass-card rounded-lg p-6 md:p-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 class="text-lg md:text-xl font-bold text-navy-100">
+                  Software Developer
+                  <span class="text-tealAccent font-normal">@ Project Soft Global Pvt Ltd</span>
+                </h3>
+                <p class="font-mono-custom text-xs text-tealAccent mt-1">Dec 2020 – Oct 2022</p>
+              </div>
+            </div>
+            <ul class="space-y-3 text-sm text-navy-400 list-none pl-0">
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Functioned as a core Backend Developer constructing server architectures for '<strong class="text-tealAccent">KatBook</strong>', a high-volume digital media platform.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Designed server models and REST APIs for '<strong class="text-tealAccent">Kampus</strong>', a comprehensive Institution Management Software handling thousands of active user operations.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Optimized database queries and schemas, decreasing average endpoint response times for institutional reporting dashboards.</span>
+              </li>
+            </ul>
+            <div class="mt-6 flex flex-wrap gap-2 pt-4 border-t border-navy-800">
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">Node.js</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">JavaScript</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">PostgreSQL</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="timeline-item relative reveal">
+          <div class="timeline-dot"></div>
+          
+          <div class="glass-card rounded-lg p-6 md:p-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 class="text-lg md:text-xl font-bold text-navy-100">
+                  Junior Software Developer
+                  <span class="text-tealAccent font-normal">@ One Whistle Inc</span>
+                </h3>
+                <p class="font-mono-custom text-xs text-tealAccent mt-1">Nov 2019 – Nov 2020</p>
+              </div>
+            </div>
+            <ul class="space-y-3 text-sm text-navy-400 list-none pl-0">
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Contributed as a Backend Developer building structural engines for '<strong class="text-tealAccent">Whistle Insurance</strong>' (claims processing modules) and '<strong class="text-tealAccent">Whistle Freights</strong>' (supply chain APIs).</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-caret-right text-tealAccent mr-3 mt-1.5 shrink-0 text-[10px]"></i>
+                <span>Wrote test suites to cover core functional operations, decreasing deployment bugs and stabilizing server behavior.</span>
+              </li>
+            </ul>
+            <div class="mt-6 flex flex-wrap gap-2 pt-4 border-t border-navy-800">
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">Node.js</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">JavaScript</span>
+              <span class="px-2 py-0.5 rounded font-mono-custom text-xs bg-navy-900 border border-navy-700 text-navy-300">SQL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-24 relative z-10 border-t border-navy-800">
+      <div class="reveal">
+        <div class="flex items-center space-x-4 mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold text-navy-100 flex items-center">
+            <span class="text-tealAccent font-mono-custom text-xl mr-2">04.</span> Academic Background
+          </h2>
+          <div class="h-px bg-navy-800 flex-grow"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- MCA Card -->
+        <div class="glass-card rounded-lg p-8 relative overflow-hidden reveal-left">
+          <!-- Highlight Glow Corner -->
+          <div class="absolute top-0 right-0 w-24 h-24 bg-tealAccent/5 rounded-full blur-xl pointer-events-none"></div>
+          
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <span class="text-xs font-mono-custom text-tealAccent">2017 – 2019</span>
+              <h3 class="text-xl font-bold text-navy-100 mt-1">Master of Computer Applications (MCA)</h3>
+            </div>
+            <span class="px-3 py-1 rounded bg-tealAccent/15 border border-tealAccent/20 text-tealAccent font-mono-custom text-xs font-bold shrink-0">
+              90% Score
+            </span>
+          </div>
+          <p class="text-sm font-medium text-navy-100 mb-2">RVS College of Arts and Science</p>
+          <p class="text-xs text-navy-400 leading-relaxed">
+            Advanced coursework in software engineering, database management systems, network protocols, operations research, and modern web architectures.
+          </p>
+        </div>
+
+        <!-- BCA Card -->
+        <div class="glass-card rounded-lg p-8 relative overflow-hidden reveal-right">
+          <!-- Highlight Glow Corner -->
+          <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-full blur-xl pointer-events-none"></div>
+          
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <span class="text-xs font-mono-custom text-tealAccent">2014 – 2017</span>
+              <h3 class="text-xl font-bold text-navy-100 mt-1">Bachelor of Computer Applications (BCA)</h3>
+            </div>
+            <span class="px-3 py-1 rounded bg-navy-700 border border-navy-600 text-navy-300 font-mono-custom text-xs font-bold shrink-0">
+              64% Score
+            </span>
+          </div>
+          <p class="text-sm font-medium text-navy-100 mb-2">RVS College of Arts and Science</p>
+          <p class="text-xs text-navy-400 leading-relaxed">
+            Foundational computer science concepts, object-oriented programming, data structures, UI algorithms, and systems analysis.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative z-10 border-t border-navy-800">
+      <div class="reveal text-center max-w-2xl mx-auto mb-12">
+        <span class="text-tealAccent font-mono-custom text-sm">05. What's Next?</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-100 mt-2 mb-4">Get In Touch</h2>
+        <p class="text-navy-400 text-sm md:text-base leading-relaxed">
+          My inbox is always open. Whether you have a question, want to collaborate on a scaling backend architecture, or just want to say hello, feel free to drop a message!
+        </p>
+      </div>
+
+      <div class="max-w-xl mx-auto reveal">
+        <!-- Success Alert (Hidden by default) -->
+        <div id="form-success" class="hidden mb-6 p-4 rounded-md border border-green-500/30 bg-green-500/10 text-green-400 text-sm items-center space-x-3 transition-opacity duration-300">
+          <i class="fa-solid fa-circle-check text-xl shrink-0"></i>
+          <div>
+            <strong class="font-bold">Message sent successfully!</strong> Thank you for reaching out. I'll get back to you shortly.
+          </div>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="glass-card rounded-lg p-6 md:p-8">
+          <form id="contact-form" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Name Input -->
+              <div>
+                <label for="name" class="block font-mono-custom text-xs text-tealAccent mb-2">Your Name</label>
+                <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3 rounded text-navy-100 text-sm focus:ring-1 focus:ring-tealAccent" placeholder="John Doe">
+              </div>
+              <!-- Email Input -->
+              <div>
+                <label for="email" class="block font-mono-custom text-xs text-tealAccent mb-2">Your Email</label>
+                <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 rounded text-navy-100 text-sm focus:ring-1 focus:ring-tealAccent" placeholder="johndoe@example.com">
+              </div>
+            </div>
+            
+            <!-- Subject Input -->
+            <div>
+              <label for="subject" class="block font-mono-custom text-xs text-tealAccent mb-2">Subject</label>
+              <input type="text" id="subject" name="subject" required class="form-input w-full px-4 py-3 rounded text-navy-100 text-sm focus:ring-1 focus:ring-tealAccent" placeholder="Let's build something scalable">
+            </div>
+
+            <!-- Message TextArea -->
+            <div>
+              <label for="message" class="block font-mono-custom text-xs text-tealAccent mb-2">Your Message</label>
+              <textarea id="message" name="message" rows="5" required class="form-input w-full px-4 py-3 rounded text-navy-100 text-sm focus:ring-1 focus:ring-tealAccent resize-none" placeholder="Hey Vairamuthu, I would love to talk about..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="form-submit-btn" class="w-full py-4 px-6 border border-tealAccent text-tealAccent rounded font-mono-custom text-sm font-semibold hover:bg-tealAccent/10 transition-colors duration-300">
+              <i class="fa-solid fa-paper-plane mr-2"></i>Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-navy-800 text-center font-mono-custom text-xs text-navy-400 relative z-10 bg-navy-950/80">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+      <div class="text-left">
+        <p class="text-navy-100 font-bold mb-1">Vairamuthu B.</p>
+        <p class="text-[10px]">Full Stack Engineer Portfolio</p>
+      </div>
+      <div>
+        <p>© 2026 Vairamuthu B. All Rights Reserved.</p>
+        <p class="text-[10px] text-navy-400/60 mt-1">Built with HTML5, Tailwind CSS, & Vanilla JS</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
