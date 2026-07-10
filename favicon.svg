@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="25" fill="#0a192f" />
+  <!-- Outer glowing border effect -->
+  <rect x="2" y="2" width="96" height="96" rx="23" fill="none" stroke="#64ffda" stroke-width="4" stroke-opacity="0.4" />
+  <!-- Code tag symbol -->
+  <text x="50" y="66" font-family="Consolas, Fira Code, Monaco, monospace" font-size="46" font-weight="900" fill="#64ffda" text-anchor="middle">&lt;/&gt;</text>
+</svg>
